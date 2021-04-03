@@ -47,3 +47,8 @@ echo htmlentities($string, ENT_QUOTES, 'UTF-8');
 ```
 <sub>reference: https://dev.to/anastasionico/good-practices-how-to-sanitize-validate-and-escape-in-php-3-methods-139b</sub>
 
+## Dev Info
+
+- There is a file called DB_CREATION.sql at Config folder.
+
+- Moddify the file ```db_connection.example.ini``` with the correct information to connect to your DataBase and rename the file to ```db_connection.ini```. (remember to take the '<' and '>' signs from the options!).
