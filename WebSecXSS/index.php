@@ -4,7 +4,19 @@
 
 if (isset($_POST["submit"])) {
 
-  saveComment($_POST["name"], $_POST["comment"]);
+  if ($_POST["name"] != "" && $_POST["comment"] != "") {
+    $errorName = "";
+    $errorComment = "";
+    saveComment($_POST["name"], $_POST["comment"]);
+  }
+
+  if ($_POST["name"] == "") {
+    $errorName = "*Name can not be blank";
+  }
+
+  if ($_POST["comment"] == "") {
+    $errorComment = "*Comment can not be blank";
+  }
 }
 
 $comments = getAllComments();
@@ -44,12 +56,16 @@ $comments = getAllComments();
         <p>
           <label for="name" class="w3-text-theme-l2">Name:</label>
           <input name="name" type="text" class="w3-input w3-border" />
-          <span><?php print($errorName) ?></span>
+          <span class="error-text <?php if ($errorName == "") {
+                                    print('hide');
+                                  } ?>"><?php print($errorName) ?></span>
         </p>
         <p>
           <label for="comment" class="w3-text-theme-l2">Comment:</label>
           <textarea name="comment" id="" class="w3-input w3-border" style="resize: none;"></textarea>
-          <span class=""><?php print($errorComment) ?></span>
+          <span class="error-text <?php if ($errorComment == "") {
+                                    print('hide');
+                                  } ?>"><?php print($errorComment) ?></span>
         </p>
         <div class="w3-right ">
           <button class="w3-button w3-theme-light  w3-round-large" name="submit">Submit</button>

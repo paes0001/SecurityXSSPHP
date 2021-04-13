@@ -104,6 +104,24 @@ include_once '../Common/Functions.php';
         .w3-hover-border-theme:hover {
             border-color: #98ddde !important
         }
+
+        .error-text {
+            color: red;
+            text-shadow: 1px 1px 2px #777;
+            /* background-color: #eee; */
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .img-blur {
+            /* Add the blur effect */
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+        }
     </style>
     <title>WebSecXSS</title>
 </head>
